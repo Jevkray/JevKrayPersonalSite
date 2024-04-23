@@ -1,19 +1,9 @@
-﻿using System;
-using System.Drawing.Drawing2D;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Azure;
-using JevKrayPersonalSite.DAL;
-using JevKrayPersonalSite.Models;
-using JevKrayPersonalSite.Services;
+﻿using JevKrayPersonalSite.DAL;
 using JevKrayPersonalSite.Services.ServiceInterfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace JevKrayPersonalSite.Services
 {
@@ -42,7 +32,7 @@ namespace JevKrayPersonalSite.Services
                 {
                     _httpContextAccessor.HttpContext.Response.Cookies.Delete("CapchaSessionId");
 
-                    var capchaSession = _dbContext.CapchaSessions.FirstOrDefault(c => c.SessionId == sessionId);
+                    var capchaSession = await _dbContext.CapchaSessions.FirstOrDefaultAsync(c => c.SessionId == sessionId);
 
                     if (capchaSession != null)
                     {
@@ -60,7 +50,7 @@ namespace JevKrayPersonalSite.Services
 
         public async Task<bool> IsValidCaptchaAsync(string capcha, string sessionId)
         {
-            var capchaSessionModel = _dbContext.CapchaSessions.FirstOrDefault(c => c.SessionId == sessionId);
+            var capchaSessionModel = await _dbContext.CapchaSessions.FirstOrDefaultAsync(c => c.SessionId == sessionId);
 
             if (capchaSessionModel != null)
             {

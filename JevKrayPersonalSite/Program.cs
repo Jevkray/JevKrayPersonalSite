@@ -1,8 +1,8 @@
 using JevKrayPersonalSite.DAL;
 using JevKrayPersonalSite.PrivateServices.PrivateBackgroundServices;
 using JevKrayPersonalSite.Routing;
-using JevKrayPersonalSite.Services.ServiceInterfaces;
 using JevKrayPersonalSite.Services;
+using JevKrayPersonalSite.Services.ServiceInterfaces;
 using JevKrayPersonalSite.Workers;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,12 +1,10 @@
 ﻿using JevKrayPersonalSite.DAL;
 using JevKrayPersonalSite.Models;
-using JevKrayPersonalSite.PrivateServices.MailSender;
 using JevKrayPersonalSite.Services;
 using JevKrayPersonalSite.Services.ServiceInterfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Drawing.Imaging;
-using System.Net.Mail;
 
 namespace JevKrayPersonalSite.Controllers
 {

@@ -1,6 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using JevKrayPersonalSite.PrivateServices.MailSender;
 using JevKrayPersonalSite.Services.ServiceInterfaces;
-using JevKrayPersonalSite.PrivateServices.MailSender;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JevKrayPersonalSite.Controllers.ApiControllers
