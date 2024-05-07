@@ -81,25 +81,36 @@ namespace JevKrayPersonalSite.Services
             Bitmap bmp = new Bitmap(100, 50);
             using (Graphics graphics = Graphics.FromImage(bmp))
             {
-                // Задаем цвет фона
-                graphics.Clear(Color.FromArgb(56, 56, 56));
+                graphics.Clear(Color.FromArgb(56, 56, 56)); // Фон изображения
+                Random random = new Random();
 
-                // Задаем цвет текста и шрифт
-                using (Brush brush = new SolidBrush(Color.FromArgb(255, 255, 255)))
-                using (Font font = new Font("Consolas", 25))
+                using (Font font = new Font("Consolas", 20)) // Шрифт для текста
                 {
-                    // Определяем размеры текста
-                    SizeF textSize = graphics.MeasureString(code, font);
+                    // Вычисляем общую ширину текста
+                    float totalWidth = 0;
+                    foreach (char c in code)
+                    {
+                        SizeF textSize = graphics.MeasureString(c.ToString(), font);
+                        totalWidth += textSize.Width;
+                    }
 
-                    // Определяем позицию текста для центрирования
-                    float x = (bmp.Width - textSize.Width) / 2;
-                    float y = (bmp.Height - textSize.Height) / 2;
+                    // Начальное смещение по оси X для центрирования текста
+                    float x = (bmp.Width - totalWidth) / 2;
+                    float y = (bmp.Height - font.Size) / 2; // Центрирование по вертикали
 
-                    // Отрисовываем текст на изображении
-                    graphics.DrawString(code, font, brush, x, y);
+                    // Отрисовка каждого символа с новой случайной кистью
+                    foreach (char c in code)
+                    {
+                        using (Brush brush = new SolidBrush(Color.FromArgb(random.Next(256), random.Next(256), random.Next(256))))
+                        {
+                            string text = c.ToString();
+                            SizeF textSize = graphics.MeasureString(text, font);
+                            graphics.DrawString(text, font, brush, x, y);
+                            x += textSize.Width; // Сдвигаем позицию следующего символа по оси X
+                        }
+                    }
                 }
 
-                Random random = new Random();
                 using (var distortedImage = new Bitmap(bmp.Width, bmp.Height))
                 using (Graphics distortedGraphics = Graphics.FromImage(distortedImage))
                 {
