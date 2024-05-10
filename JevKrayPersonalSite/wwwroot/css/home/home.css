@@ -1,28 +1,40 @@
-﻿.bg-photo {
-    background-image: url(../../pictures/noback.png);
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-}
-
-.min-vh-88-2 {
-    min-height: 88.2vh !important;
-}
-
-.hr-washed {
-    margin: 20px 0;
-    padding: 0;
-    height: 0;
-    border: none;
-    box-shadow: 0 0 10px 2px white;
-    height: 0px !important;
-    color: rgb(74,86,234);
-}
-
-@media (min-width: 768px) 
-{
-    .hr-washed {
-        display: none;
+﻿    .bg-photo {
+        background-image: url(../../pictures/noback.png);
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+        box-shadow: -4px 4px 16px 32px rgb(56, 56, 56) inset;
     }
-}
+
+    .min-vh-88-2 {
+        min-height: 88.2vh !important;
+    }
+
+    .hr-washed {
+        margin: 20px 0;
+        padding: 0;
+        height: 0;
+        border: none;
+        box-shadow: 0 0 10px 2px white;
+        height: 0px !important;
+        color: rgb(74,86,234);
+    }
+
+    @media (min-width: 768px) 
+    {
+        .hr-washed {
+            display: none;
+        }
+    }
+
+    .link-def 
+    {
+        color: rgb(74,86,234);
+        transition: all 0.1s ease;
+    }
+
+    .link-def:hover 
+    {
+        color: rgb(74,86,184);
+    }

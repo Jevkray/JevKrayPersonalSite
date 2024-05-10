@@ -52,7 +52,7 @@ namespace JevKrayPersonalSite.Controllers
                 .Include(p => p.ProjectPictures)
                 .FirstOrDefaultAsync(p => p.Id == id);
 
-            return project.ProjectPictures.FirstOrDefault(p=>p.Number == number).ImageLink;
+            return project.ProjectPictures.FirstOrDefault(p => p.Number == number).ImageLink;
         }
 
         public IActionResult GazorpGameStore()

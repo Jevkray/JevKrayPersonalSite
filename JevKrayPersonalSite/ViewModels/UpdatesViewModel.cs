@@ -10,4 +10,3 @@ namespace JevKrayPersonalSite.ViewModels
         public int CurrentPage { get; set; }
     }
 }
-    
