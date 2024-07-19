@@ -2,6 +2,26 @@
 <html lang="en">
 <head>
 
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(97873846, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/97873846" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
@@ -27,31 +47,31 @@
 
                         var currentPage = ViewData["Title"] as string; // Здесь мы присваиваем значение Титла* страницы чтобы определеить на какой странцие мы находимся
 
-                            <div class="nav-brand col-3 fs-3 ">
-                                <a class="a-link text-white text-decoration-none logo-main translate-3-text @(currentPage == "Главная" ? "a-active" : "")" asp-controller="Home" asp-action="Home"><span></span></a>
-                            </div>
-                            <div class="col-9 d-none d-md-flex align-items-center">
-                                <div class="nav-item ms-auto ps-3 pe-3 fs-4 ">
-                                    <div class="translate-3-text  @(currentPage == "Образование" ? "a-active" : "")">
-                                        <a class="a-link text-white text-decoration-none" asp-controller="Home" asp-action="Education">Образование</a>
-                                    </div>
-                                </div>
-                                <div class="nav-item ps-3 pe-3 fs-4 ">
-                                    <div class="translate-3-text @(currentPage == "Навыки" ? "a-active" : "")">
-                                        <a class="a-link text-white text-decoration-none " asp-controller="Home" asp-action="Skills">Навыки</a>
-                                    </div>
-                                </div>
-                                <div class="nav-item ps-3 pe-3 fs-4">
-                                    <div class="translate-3-text @(currentPage == "Проекты" ? "a-active" : "")">
-                                        <a class="a-link text-white text-decoration-none" asp-controller="Projects" asp-action="Projects">Проекты</a>
-                                    </div>
-                                </div>
-                                <div class="nav-item ps-3 pe-3 fs-4 ">
-                                    <div class="translate-3-text @(currentPage == "Инфо" ? "a-active" : "")">
-                                        <a class="a-link text-white text-decoration-none" asp-controller="Home" asp-action="Info">Инфо</a>
-                                    </div>
+                        <div class="nav-brand col-3 fs-3 ">
+                            <a class="a-link text-white text-decoration-none logo-main translate-3-text @(currentPage == "Главная" ? "a-active" : "")" asp-controller="Home" asp-action="Home"><span></span></a>
+                        </div>
+                        <div class="col-9 d-none d-md-flex align-items-center">
+                            <div class="nav-item ms-auto ps-3 pe-3 fs-4 ">
+                                <div class="translate-3-text  @(currentPage == "Образование" ? "a-active" : "")">
+                                    <a class="a-link text-white text-decoration-none" asp-controller="Home" asp-action="Education">Образование</a>
                                 </div>
                             </div>
+                            <div class="nav-item ps-3 pe-3 fs-4 ">
+                                <div class="translate-3-text @(currentPage == "Навыки" ? "a-active" : "")">
+                                    <a class="a-link text-white text-decoration-none " asp-controller="Home" asp-action="Skills">Навыки</a>
+                                </div>
+                            </div>
+                            <div class="nav-item ps-3 pe-3 fs-4">
+                                <div class="translate-3-text @(currentPage == "Проекты" ? "a-active" : "")">
+                                    <a class="a-link text-white text-decoration-none" asp-controller="Projects" asp-action="Projects">Проекты</a>
+                                </div>
+                            </div>
+                            <div class="nav-item ps-3 pe-3 fs-4 ">
+                                <div class="translate-3-text @(currentPage == "Инфо" ? "a-active" : "")">
+                                    <a class="a-link text-white text-decoration-none" asp-controller="Home" asp-action="Info">Инфо</a>
+                                </div>
+                            </div>
+                        </div>
 
                     }
                     <div class="col-9 d-md-none align-items-center text-end">
@@ -190,8 +210,8 @@
                             <div>
                                 <input class="margin-input-button" id="sendButton" value="Отправить" type="submit">
                                 <div id="sendMessage" class="d-none">
-                                <hr class="p-0 m-0 mt-3 mb-2"/>
-                                <span class="fs-6 opacity-75">Если по какой-либо причиме отправка сообщей не происходит свяжитесь со мной по адресу krasovskyworks@gmail.com</span>
+                                    <hr class="p-0 m-0 mt-3 mb-2" />
+                                    <span class="fs-6 opacity-75">Если по какой-либо причиме отправка сообщей не происходит свяжитесь со мной по адресу krasovskyworks@gmail.com</span>
                                 </div>
                             </div>
                             <div class="" id="modalMessage"></div>
@@ -258,7 +278,7 @@
                         error: function () {
                             // По получении успешного ответа от сервера
                             $('#sendButton').val('Проверьте капчу'); // Изменяем текст кнопки на "Доставлено"
-                            
+
                             setTimeout(function () {
                                 $('#sendButton').prop('disabled', false).removeClass('opacity-75').val('Отправить'); // Восстанавливаем кнопку отправки
                             }, 1500); // Через 1.5 секунды
